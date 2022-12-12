@@ -1,0 +1,15 @@
+/Users/wcaetano/Generation/projeto_blog_pessoal/blogpessoal/src/main/java/com/generation/blogpessoal/service/UsuarioService.java
+/Users/wcaetano/Generation/projeto_blog_pessoal/blogpessoal/src/main/java/com/generation/blogpessoal/security/UserDetailsImpl.java
+/Users/wcaetano/Generation/projeto_blog_pessoal/blogpessoal/src/main/java/com/generation/blogpessoal/model/Tema.java
+/Users/wcaetano/Generation/projeto_blog_pessoal/blogpessoal/src/main/java/com/generation/blogpessoal/repository/TemaRepository.java
+/Users/wcaetano/Generation/projeto_blog_pessoal/blogpessoal/src/main/java/com/generation/blogpessoal/repository/UsuarioRepository.java
+/Users/wcaetano/Generation/projeto_blog_pessoal/blogpessoal/src/main/java/com/generation/blogpessoal/controller/TemaController.java
+/Users/wcaetano/Generation/projeto_blog_pessoal/blogpessoal/src/main/java/com/generation/blogpessoal/security/UserDetailsServiceImpl.java
+/Users/wcaetano/Generation/projeto_blog_pessoal/blogpessoal/src/main/java/com/generation/blogpessoal/controller/UsuarioController.java
+/Users/wcaetano/Generation/projeto_blog_pessoal/blogpessoal/src/main/java/com/generation/blogpessoal/model/UsuarioLogin.java
+/Users/wcaetano/Generation/projeto_blog_pessoal/blogpessoal/src/main/java/com/generation/blogpessoal/model/Usuario.java
+/Users/wcaetano/Generation/projeto_blog_pessoal/blogpessoal/src/main/java/com/generation/blogpessoal/repository/PostagemRepositoy.java
+/Users/wcaetano/Generation/projeto_blog_pessoal/blogpessoal/src/main/java/com/generation/blogpessoal/BlogpessoalApplication.java
+/Users/wcaetano/Generation/projeto_blog_pessoal/blogpessoal/src/main/java/com/generation/blogpessoal/controller/PostagemController.java
+/Users/wcaetano/Generation/projeto_blog_pessoal/blogpessoal/src/main/java/com/generation/blogpessoal/model/Postagem.java
+/Users/wcaetano/Generation/projeto_blog_pessoal/blogpessoal/src/main/java/com/generation/blogpessoal/security/BasicSecurityConfig.java

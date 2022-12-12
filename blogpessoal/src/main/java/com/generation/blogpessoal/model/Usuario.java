@@ -12,19 +12,20 @@ import java.util.List;
 @Entity
 @Table(name = "tb_usuario")
 public class Usuario {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long id;
+    private Long id;
 
-    @NotNull(message = "O Atributo Nome é Obrigatório!")
-    public String nome;
+    @NotNull(message = "O atributo nome é obrigatório")
+    private String nome;
 
-    @NotNull(message = "O Atributo Usuário é Obrigatório!")
-    @Email(message = "O Atributo Usuário deve ser um email válido!")
-    public String usuario;
+    @NotNull(message = "O atributo usuário é obrigatório")
+    @Email(message = "O atributo usuário deve ser um email válido")
+    private String usuario;
 
-    @NotBlank(message = "O Atributo Senha é Obrigatório!")
-    @Size(min = 8, message = "A Senha deve ter no mínimo 8 caracteres")
+    @NotBlank(message = "O atribulo senha é obrigatório")
+    @Size(min = 8, message = "A senha deve conter no mínimo 8 caracteres")
     private String senha;
 
     @Size(max = 5000, message = "O link da foto não pode ser maior do que 5000 caracteres")
@@ -33,6 +34,17 @@ public class Usuario {
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
     @JsonIgnoreProperties("usuario")
     private List<Postagem> postagem;
+
+    public Usuario(Long id, String nome, String usuario, String senha, String foto) {
+        this.id = id;
+        this.nome = nome;
+        this.usuario = usuario;
+        this.senha = senha;
+        this.foto = foto;
+    }
+
+    public Usuario() {
+    }
 
     public Long getId() {
         return id;
@@ -46,8 +58,8 @@ public class Usuario {
         return nome;
     }
 
-    public void setNome(String name) {
-        this.nome = name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getUsuario() {

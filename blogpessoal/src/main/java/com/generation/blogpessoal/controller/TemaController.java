@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/temas")
+@RequestMapping("/tema")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class TemaController {
 
@@ -25,35 +25,37 @@ public class TemaController {
         return ResponseEntity.ok(temaRepository.findAll());
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("{id}")
     public ResponseEntity<Tema> getById(@PathVariable Long id){
         return temaRepository.findById(id)
-                .map(resposta -> ResponseEntity.ok(resposta))
-                .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
-    @GetMapping("/Descricao/{descricao}")
+    @GetMapping("/descricao/{descricao}")
     public ResponseEntity<List<Tema>> getByTitle(@PathVariable String descricao){
         return ResponseEntity.ok(temaRepository.findAllByDescricaoContainingIgnoreCase(descricao));
     }
 
-    @PostMapping
-    public ResponseEntity<Tema> post(@Valid @RequestBody Tema tema){
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body(temaRepository.save(tema));
-    }
-
-    @PutMapping
-    public ResponseEntity<Tema> put(@Valid @RequestBody Tema tema){
+   @PostMapping
+   public ResponseEntity<Tema> post(@Valid @RequestBody Tema tema){
         return temaRepository.findById(tema.getId())
                 .map(resposta -> ResponseEntity.status(HttpStatus.CREATED)
                         .body(temaRepository.save(tema)))
+                .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+
+   }
+
+    @PutMapping
+    public ResponseEntity<Tema> atualizarTema(@Valid @RequestBody Tema tema){
+        return temaRepository.findById(tema.getId())
+                .map(resposta -> ResponseEntity.status(HttpStatus.CREATED).body(resposta))
                 .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id){
+    public void deletarTema(@PathVariable Long id){
         Optional<Tema> tema = temaRepository.findById(id);
 
         if(tema.isEmpty())
@@ -61,5 +63,4 @@ public class TemaController {
 
         temaRepository.deleteById(id);
     }
-
 }

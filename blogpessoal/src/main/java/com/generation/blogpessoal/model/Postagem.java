@@ -5,25 +5,23 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "tb_postagens")
+@Table(name = "tb_postagem")
 public class Postagem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    //@NotNull(message = "O atributo id é obrigatório")
     private Long id;
 
-    @NotBlank(message = "O atributo título é obrigatório e não pode ser vazio.")
-    @Size(min = 5, max = 100, message = "O atributo título deve conter no mínimo 5 e no máximo 100 caracteres.")
+    @NotBlank(message = "O atributo título é obrigatório.")
+    @Size(min = 5, max = 1000, message = "O atributo título deve conter no mínimo 5 e no máximo 1000 caracteres.")
     private String titulo;
 
-    @NotBlank(message = "O atributo texto é obrigatório e não pode ser vazio.")
-    @Size(min = 10, max = 1000, message = "O atributo título deve conter no mínimo 10 e no máximo 1000 caracteres.")
+    @NotBlank(message = "O atribulo texto é obrigatório.")
+    @Size(min = 10, max = 1000, message = "O atributo texto deve conter no mínimo 10 e no máximo 1000 caracteres.")
     private String texto;
 
     @UpdateTimestamp
